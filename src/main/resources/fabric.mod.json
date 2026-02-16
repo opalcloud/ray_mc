@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "ray_mc",
+  "version": "${version}",
+  "name": "ray_mc",
+  "description": "A simple Fabric mod with a super powerful god sword.",
+  "authors": [
+    "yolanda"
+  ],
+  "license": "All Rights Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.yolanda.raymc.RayMcMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.24",
+    "minecraft": "1.20.1",
+    "fabric-api": "*"
+  }
+}
+

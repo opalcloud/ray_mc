@@ -1,0 +1,44 @@
+plugins {
+    // Loom 版本从 gradle.properties 中读取，方便升级
+    id 'fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "Fabric"
+        url = "https://maven.fabricmc.net/"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Fabric API
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
+java {
+    // 使用你本机安装的 JDK（例如 21），但编译出的字节码目标保持为 Java 17，
+    // 这样既兼容 Minecraft 1.20.1，又不强制要求安装 JDK 17。
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+    withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+    // 使用 --release 17，确保用 JDK 21 编译时仍生成 Java 17 兼容的字节码
+    options.release = 17
+}
+
