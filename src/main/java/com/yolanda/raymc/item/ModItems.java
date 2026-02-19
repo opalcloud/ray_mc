@@ -11,15 +11,17 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
     public static final Item GOD_SWORD = registerItem("god_sword", new GodSwordItem());
+    public static final Item DOUBLE_SWORD = registerItem("double_sword", new DoubleSwordItem());
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(RayMcMod.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
-        // 把神剑加入战斗物品栏
+        // 把武器加入战斗物品栏
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
             entries.add(GOD_SWORD);
+            entries.add(DOUBLE_SWORD);
         });
     }
 }

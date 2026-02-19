@@ -1,4 +1,4 @@
-## ray_mc Minecraft 模组
+## Way of the Sword Minecraft 模组
 
 这是一个使用 Forge（以 1.20.1 为例）的示例模组工程，其中包含一把自定义的 **神剑**：
 

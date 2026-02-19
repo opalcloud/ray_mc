@@ -2,17 +2,14 @@
   "schemaVersion": 1,
   "id": "ray_mc",
   "version": "${version}",
-  "name": "ray_mc",
+  "name": "Way of the Sword",
+  "icon": "assets/ray_mc/Way of the Sword封面.png",
   "description": "A simple Fabric mod with a super powerful god sword.",
-  "authors": [
-    "yolanda"
-  ],
+  "authors": ["yolanda"],
   "license": "All Rights Reserved",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "com.yolanda.raymc.RayMcMod"
-    ]
+    "main": ["com.yolanda.raymc.RayMcMod"]
   },
   "depends": {
     "fabricloader": ">=0.14.24",
@@ -20,4 +17,3 @@
     "fabric-api": "*"
   }
 }
-
