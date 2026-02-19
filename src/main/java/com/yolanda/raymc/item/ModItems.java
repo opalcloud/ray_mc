@@ -12,6 +12,7 @@ public class ModItems {
 
     public static final Item GOD_SWORD = registerItem("god_sword", new GodSwordItem());
     public static final Item DOUBLE_SWORD = registerItem("double_sword", new DoubleSwordItem());
+    public static final Item NOTCH_DIAMOND_SWORD = registerItem("notch_diamond_sword", new NotchDiamondSwordItem());
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(RayMcMod.MOD_ID, name), item);
@@ -22,6 +23,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
             entries.add(GOD_SWORD);
             entries.add(DOUBLE_SWORD);
+            entries.add(NOTCH_DIAMOND_SWORD);
         });
     }
 }
